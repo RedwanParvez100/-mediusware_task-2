@@ -21,16 +21,7 @@ app.use(
         allowedHeaders: ["Content-Type", "Authorization"], // Allow specific headers
     })
 );
-// Allow specific origin
-app.use((req, res, next) => {
-    res.setHeader(
-        "Access-Control-Allow-Origin",
-        "https://mediusware-task-2-ui.vercel.app"
-    );
-    res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-    next();
-});
+
 app.use("/auth", AuthRouter);
 app.use("/products", ProductRouter);
 
