@@ -14,7 +14,13 @@ app.get("/", (req, res) => {
 });
 
 app.use(bodyParser.json());
-app.use(cors());
+app.use(
+    cors({
+        origin: "https://mediusware-task-2-ui.vercel.app", // Allow your frontend
+        methods: ["GET", "POST", "PUT", "DELETE"], // Allow specific methods
+        allowedHeaders: ["Content-Type", "Authorization"], // Allow specific headers
+    })
+);
 // Allow specific origin
 app.use((req, res, next) => {
     res.setHeader(
