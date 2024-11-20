@@ -34,7 +34,6 @@ function Login() {
                 },
                 body: JSON.stringify(loginInfo),
             });
-            console.log(response);
             const result = await response.json();
             const { success, message, jwtToken, name, error } = result;
             if (success) {
