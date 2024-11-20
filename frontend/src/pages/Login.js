@@ -41,6 +41,7 @@ function Login() {
                 handleSuccess(message);
                 localStorage.setItem("token", jwtToken);
                 localStorage.setItem("loggedInUser", name);
+                console.log(localStorage.getItem("token"));
                 setTimeout(() => {
                     navigate("/home");
                 }, []);

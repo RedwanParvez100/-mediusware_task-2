@@ -23,6 +23,7 @@ function Home() {
 
     const fetchProducts = async () => {
         try {
+            console.log(localStorage.getItem("token"));
             const url = "https://mediusware-task-2-api.vercel.app/products";
             const headers = {
                 headers: {
