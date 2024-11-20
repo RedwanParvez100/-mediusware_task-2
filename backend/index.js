@@ -10,7 +10,7 @@ require("./Models/db");
 const PORT = process.env.PORT || 8080;
 
 app.get("/", (req, res) => {
-    res.send("Hello from the server lo thela");
+    res.send("Hello from the server!!!...");
 });
 
 app.use(bodyParser.json());
