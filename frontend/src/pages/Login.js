@@ -26,14 +26,16 @@ function Login() {
             return handleError("email and password are required");
         }
         try {
-            const url = "https://mediusware-task-2-api.vercel.app/auth/login";
-            const response = await fetch(url, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(loginInfo),
-            });
+            const response = await fetch(
+                "https://mediusware-task-2-api.vercel.app/auth/login",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(loginInfo),
+                }
+            );
             const result = await response.json();
             const { success, message, jwtToken, name, error } = result;
             if (success) {
