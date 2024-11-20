@@ -34,6 +34,7 @@ function Login() {
                 },
                 body: JSON.stringify(loginInfo),
             });
+            console.log(response);
             const result = await response.json();
             const { success, message, jwtToken, name, error } = result;
             if (success) {
@@ -42,7 +43,7 @@ function Login() {
                 localStorage.setItem("loggedInUser", name);
                 setTimeout(() => {
                     navigate("/home");
-                }, 1000);
+                }, []);
             } else if (error) {
                 const details = error?.details[0].message;
                 handleError(details);
