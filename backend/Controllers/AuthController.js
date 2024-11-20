@@ -29,6 +29,7 @@ const signup = async (req, res) => {
 
 const login = async (req, res) => {
     try {
+        console.log("hello from the server");
         const { email, password } = req.body;
         const user = await UserModel.findOne({ email });
         const errorMsg = "Auth failed email or password is wrong";

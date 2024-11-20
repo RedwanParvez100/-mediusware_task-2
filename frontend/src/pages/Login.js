@@ -26,7 +26,7 @@ function Login() {
             return handleError("email and password are required");
         }
         try {
-            const url = `https://mediusware-task-2-api.vercel.app/auth/login`;
+            const url = `https://localhost:3000/auth/login`;
             const response = await fetch(url, {
                 method: "POST",
                 headers: {
